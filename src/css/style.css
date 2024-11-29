@@ -1,0 +1,48 @@
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.quize__container{
+    width: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.quize__questions--container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: var(--size--small);
+}
+    
+
+.quize__container--questions{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size--small);
+    padding-top: var(--size--small);
+}
+
+.answer__options{
+    
+    
+    
+}
+

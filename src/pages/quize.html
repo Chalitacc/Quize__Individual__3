@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
 <body>
     <main>
-        <section>
-            <div class="quize__container">
-                <div class="quize__scoreboard "></div>
+        <section class="quize__container">
+            <div class="quize__questions--container">
+                <div class="quize__scoreboard ">
+                    <p></p>
+                </div>
                 <div class="quize__container--questions">
-                    <div class="radio__container"></div>
+                    <h2 class="quize__questions"></h2>
+                    <div class="answer__options"></div>
+                    </div>
                 </div>
             </div>
 
             <div class="quize__navigation--buttons">
-               <button class="quize__next--button">
+               <button class="quize__progress--button">
                 <p class="button__text">1 of 8</p>
                </button>
             </div>
