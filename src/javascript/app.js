@@ -54,10 +54,10 @@ const quizeQuestionsArray = [{
         text: "His parents", isCorrect: false,
     },
     {
-        text: "His uncle and aunt and cousing", isCorrect: true,
+        text: "His uncle and aunt and cousin", isCorrect: true,
     },
     {
-        text: "his uncle and aunt", isCorrect: false,
+        text: "His uncle and aunt", isCorrect: false,
     }],
 },
 
@@ -88,7 +88,7 @@ const quizeQuestionsArray = [{
 {
     questions: "In book 3, what is Neville Longbottoms greatest fear, revealed upon facing a boggart in Lupins class?",
     answers: [{
-        text: "Snape", isCorrect: false,
+        text: "Snakes", isCorrect: false,
     },
     {
         text: "A clown", isCorrect: false,
@@ -110,6 +110,8 @@ const scoreBoard = document.querySelector(".quize__scoreboard");
 const progressionButton = document.querySelector(".quize__progress--button");
 const radioButtons = document.querySelector(".radio__container");
 const buttonText = document.querySelector(".quize__progress--button .button__text");
+
+const scoreDisplay = document.getElementById("score__container"); 
 
 
 
@@ -135,11 +137,7 @@ function displayquestions(elementNumber){
 
     currentQuestion.answers.forEach((answers, index)=>{
 
-        console.log(answers, "HELLO")
-
         const {text, isCorrect} = answers;
-
-        console.log(text, isCorrect, "HELLO2222");
 
         const radio = document.createElement("input");
         radio.type = "radio"; 
@@ -218,36 +216,55 @@ function displayquestions(elementNumber){
         displayquestions(currentQuestionIndex);
     } else{
        /*  displayScore(); */
-        console.log(allAnswers, "HEI HEI HEI HEIE HIEHFusdhfisdhfksdhfijksdhi")
+        console.log(allAnswers)
     }
 }); 
 
+//saved total score
 function displayScore(){
     console.log(`Quize is complete! Your score is: ${totalScore}`);
 
-    const scoreDisplay = document.querySelector(".quize__score")
-    const scoreHeader = document.createElement("h3")
-    scoreHeader.innerText = "Your Results:"
+
+    // Hiding quize Container 
+    const quizeSection = document.getElementById("quiz__container"); 
+    quizeSection.style.display = "none";
+
+    // Make score container visible
+    scoreDisplay.style.display = "flex"
+
+    const scoreHeader = document.getElementById("score__heading")
+    scoreHeader.style.display = "block"
+    scoreHeader.innerText = `Your Results: ${totalScore}/${quizeQuestionsArray.length}`
+
+    const resetButton = document.createElement("button"); 
+    resetButton.style.display = "block"
+    resetButton.className = "reset__button"
+    resetButton.textContent = "Try Again!"
+    resetButton.addEventListener("click", ()=>[
+        window.location.href = "../home.html"
+    ])
+    
+    
 
     
+    //Answer display
+    scoreDisplay.appendChild(resetButton);
     scoreDisplay.appendChild(scoreHeader)
+   
+
+
     
 
     quizeQuestionsArray.map((question, qIndex) => {
         const box = document.createElement("div")
         const text = document.createElement("p")
+        box.className = "score__box"
 
    
 
 
-        box.style.flex
-        box.style.flexDirection = "column"
-        box.style.border = "2px solid black"
-        box.style.width = "200px"
 
-
-
-        text.innerText = question.questions
+        text.innerText = question.questions 
         text.style.color = question.answers
         
         scoreDisplay.appendChild(box)
@@ -256,23 +273,24 @@ function displayScore(){
 
         question.answers.forEach((answer, aIndex) => {
             const answerBox = document.createElement("div")
+            answerBox.className = "answer__box"
             const answerText = document.createElement("p")
 
-            answerBox.width = "100%"
-
-            const selectedAnswerColor = "orange"
+        
+            // const selectedAnswerColor = "black"
             const rightAnswer = answer.isCorrect
 
             let selectedAnswerEmoji = ""
 
             if (rightAnswer) {
-                selectedAnswerEmoji = "✅"
+                selectedAnswerEmoji = "✔️"
             } else {
                 selectedAnswerEmoji = "❌"
             }
 
            if (allAnswers[qIndex].answerText === answer.text) {
-            answerBox.style.border = "2px solid" + selectedAnswerColor
+                answerBox.style.backgroundColor = "yellow"
+            // answerBox.style.border = "2px solid " + selectedAnswerColor
            } else {
              answerBox.style.border = "none"
            }

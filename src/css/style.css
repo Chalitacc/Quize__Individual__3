@@ -1,26 +1,35 @@
 body{
     width: 100%;
     height: 100vh;
+   background-color: navy;
 }
 
 main{
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    
+    justify-items: center;
 }
 
+.main__container{
+    width: 80%;
+    height: 80%;
+}
+
+/* QUESTION SECTION */
 .quize__container{
-    width: 50%;
-    height: 60%;
     display: flex;
     align-items: center;
     flex-direction: column;
     border: 1px solid black;
     gap: var(--size--x-large);
+    background: var(--secondary-primar);
+    color: #D4AF37;
+    padding-top: var(--size--medium);
 }
+
 
 .quize__questions--container{
     width: 100%;
@@ -40,18 +49,86 @@ main{
     padding-top: var(--size--small);
 }
 
+.quize__questions{
+    text-align: center;
+}
+
 .answer__options{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--size--large);
-    
-    
+    gap: var(--size--large);   
 }
 
 .quize__progress--button{
     width: 200px;
+    height: 30px;
+    border-radius: var(--size--x-small);
+    color: var(--text-color);
+    background-color: var(--color-primary);
+    border: 2px solid black;
+}
+
+.quize__progress--button:hover{
+    cursor: pointer;
+    background-color: #D4AF37;
+    color: black;
+}
+
+/* SCORE SECTION */
+#score__container{
+    display: none;
+}
+
+#score__heading{
+    width: 100%;
+    font-size: var(--font-small);
+    text-decoration: underline;
+}
+
+.quize__scoreboard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size--x-large);
+    color: #D4AF37;
+    padding-top: var(--size--medium);
+    flex-wrap: wrap;
+    height: 100%;
+
+    
 }
 
 
+.score__box{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 30%;
+    box-sizing: border-box;
+    background-color: lightblue;
+    color: black;
+}
+
+
+.answer__box{
+    color: black;
+
+background-color: white;
+}
+
+.reset__button{
+    width: 200px;
+    height: 30px;
+    border-radius: var(--size--x-small);
+    color: var(--text-color);
+    background: var(--color-primary);
+    border: 2px solid black;
+    cursor:pointer;
+
+}
+
+.reset__button:hover{
+    color: gold;
+}

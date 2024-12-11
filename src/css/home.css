@@ -54,5 +54,6 @@ img{
 
 .start__button:hover{
     cursor: pointer;
-    background-color: grey;
+    background-color: #D4AF37;
+    color: black;
 }
