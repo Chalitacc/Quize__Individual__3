@@ -15,5 +15,5 @@ contact: chalita.antonsen@gmail.com
 
 
 ## Links
-Here is the link to my git hub: https://github.com/Chalitacc/Individual-Assignment-1---BookSop-Page/tree/main: 
-here is the link for my netflify: https://chalita-assignment1.netlify.app/
+Here is the link to my git hub:https://github.com/Chalitacc/Quize__Individual__3: 
+here is the link for my netflify: https://chalita-individual3.netlify.app/
